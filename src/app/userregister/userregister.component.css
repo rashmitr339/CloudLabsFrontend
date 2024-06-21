@@ -1,0 +1,70 @@
+.hero {
+    background-image: url('../../assets/lab.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333; /* Dark color for text to contrast with light background */
+    padding: 20px; /* Add padding to create space around the content */
+  }
+
+  .hero-text {
+    max-width: 600px; /* Adjust width as needed */
+  }
+
+  .hero-text h1 {
+    font-size: 3rem; /* Example: Adjust the font size */
+    margin-bottom: 20px; /* Space between heading and paragraph */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem; /* Example: Adjust the font size */
+    line-height: 1.6; /* Example: Adjust line height for readability */
+    margin-bottom: 20px; /* Space between paragraph and button */
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bold;
+  }
+
+  .hero-text button {
+    background-color:  #495057 ; /* Example: Adjust button background color */
+    color: #fff; /* Match button text color with background color */
+    padding: 10px 20px; /* Padding around button text */
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem; /* Example: Adjust button font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition color change */
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .hero-text button:hover {
+    background-color: #6c757d; /* Darker color on hover */
+    color: #fff; /* Change text color on hover */
+  }
+
+
+  .form-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    max-width: 400px;
+    width: 100%; /* Added to ensure the container takes up full width */
+    margin: auto;
+  }
+  .form-container input, .form-container button {
+    width: 100%; /* Ensures inputs and button take up full width */
+    margin-bottom: 15px;
+  }
+
+  .text-center{
+    margin-bottom: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-dark bg-dark" style="padding-top: 6px; padding-bottom: 6px;">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1" style="font-size: 22px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+        <img src="../../assets/logo8.jpg" alt="cloudimg" style="height: 40px; width: 40px; border-radius: 50%; margin-right: 8px;"> 
+        dot.Cloud
+      </span>
+      <div class="d-flex ms-auto align-items-center">
+        <a class="nav-link text-light me-5" href="#home" style="margin-top: 3px; font-family:'Times New Roman', Times, serif;">Home</a>
+        <a class="nav-link text-light me-5" href="#about" style="margin-top: 3px; font-family:'Times New Roman', Times, serif;">About Us</a>
+        <a class="nav-link text-light me-5" href="#features" style="margin-top: 3px; font-family:'Times New Roman', Times, serif;">Features</a>
+        <a class="nav-link text-light me-5" href="#contact" style="margin-top: 3px; font-family:'Times New Roman', Times, serif;">Contact Us</a>
+        <!-- <button class="btn btn-outline-light me-3" type="button" (click)="user()" style="font-family:'Times New Roman', Times, serif;">Login</button> -->
+        <!-- <button class="btn btn-outline-light" type="button" (click)="admin()"  style="font-family:'Times New Roman', Times, serif;">Admin</button> -->
+      </div>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="form-container">
+        <h2 class="text-center">Login</h2>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" [(ngModel)]="Data.email">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password" [(ngModel)]="Data.password">
+            </div>
+            <button type="button" class="btn btn-primary w-100" style="font-family:'Times New Roman', Times, serif;" (click)="login()"  [disabled]="!areFieldsFilled()">Login</button>
+            <p>If you haven't registered, please register <a href="/userregister">Here</a></p>
+        </form>
+      </div>
+  </div>

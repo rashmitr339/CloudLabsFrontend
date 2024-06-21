@@ -1,0 +1,40 @@
+<div>
+    <h3>Edit Question:</h3>
+    <div class="btnnn-container">
+        <!-- <button class="btnnn" (click)="toggleValidation()">Toggle Validation</button> -->
+          <button class="btnnn" (click)="back()">Back</button>
+      </div>
+</div>
+<form class="form">
+    <div class="row">
+        <label for="Question" class="label">Question:</label>
+        <input type="text" placeholder="question" name="question" required class="input-field" [(ngModel)]="Data.question">
+    </div>
+    <div class="row">
+        <label for="Option1" class="label">Option 1:</label>
+        <input type="text" placeholder="opt1" name="opt1" required class="input-field" [(ngModel)]="Data.option1">
+    </div>
+    <div class="row">
+        <label for="Option2" class="label">Option 2:</label>
+        <input type="text" placeholder="opt2" name="opt2" required class="input-field" [(ngModel)]="Data.option2">
+    </div>
+    <div class="row">
+        <label for="Option3" class="label">Option 3:</label>
+        <input type="text" placeholder="opt3" name="opt3" required class="input-field" [(ngModel)]="Data.option3">
+    </div>
+    <div class="row">
+        <label for="Option4" class="label">Option 4:</label>
+        <input type="text" placeholder="opt4" name="opt4" required class="input-field" [(ngModel)]="Data.option4">
+    </div>
+    <div class="row">
+        <label for="Marks" class="label">Marks:</label>
+        <input type="text" placeholder="marks" name="marks" required class="input-field" [(ngModel)]="Data.marks">
+    </div>
+    <div class="row">
+        <label for="Answer" class="label">Answer:</label>
+        <input type="text" placeholder="ans" name="ans" required class="input-field" [(ngModel)]="Data.answer">
+    </div>
+    <div class="row">
+        <button type="button" class="button" (click)="editData(Data.id)" [disabled]="Data.question==='' || Data.option1==='' || Data.option2==='' || Data.option3==='' || Data.option4==='' || Data.marks==='' || Data.answer===''">Edit</button>
+    </div>
+</form>

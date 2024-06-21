@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="user-info">
+      <img src="../../assets/user2.png" alt="User Icon" class="user-icon" (click)="home()">
+      <h6 class="username">{{ username }}</h6>
+    </div>
+    <h4 style="margin-bottom: 10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:whitesmoke;">Menu</h4>
+    <ul>
+      <li><a routerLink="/adminlab"><i class="bi bi-info-circle" style="color: white; margin-right: 5px;"></i>Info</a></li>
+      <li><a routerLink="/adminevent"><i class="bi bi-calendar" style="color: white; margin-right: 5px;"></i>Events</a></li>
+      <li><a routerLink="/admincost"><i class="bi bi-currency-dollar" style="color: white; margin-right: 5px;"></i>Cost Management</a></li>
+      <li><a routerLink="/admindashboard"><i class="bi bi-speedometer2" style="color: white; margin-right: 5px;"></i>Dashboard</a></li>
+      <li><a routerLink="/viewusers"><i class="bi bi-people" style="color: white; margin-right: 5px;"></i>View Users</a></li>
+    </ul>
+  </div>
+  
+  <div class="content" style="margin-left: 250px;">
+    <h1>Cost and Usage Estimation</h1>
+    <p class="first">"The Cost and Usage Estimation tool allows you to calculate the cost and usage of your cloud services over a specified period. By selecting a start date and an end date, you can generate a detailed report of your service usage and the associated costs, helping you to manage your cloud budget effectively."</p>
+
+    <form (ngSubmit)="onSubmit()" style="margin-left: 30px; margin-top:20px;">
+        <div class="mb-3">
+          <label for="startDate" class="form-label">Start Date</label>
+          <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="startDate" required>
+        </div>
+        <div class="mb-3">
+          <label for="endDate" class="form-label">End Date</label>
+          <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="endDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!startDate || !endDate || loading">Proceed</button>
+      </form>
+    
+      <div *ngIf="costDetails" class="main">
+        <h2>Cost Details</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let service of costDetails.serviceCosts | keyvalue">
+              <td>{{ service.key }}</td>
+              <td>{{ formatCurrency(service.value) }}</td> 
+            </tr>
+          </tbody>
+        </table>
+        <p style="color: rgb(224, 69, 69);">Total Cost: {{ costDetails.totalCost | number:'1.2-2' | currency:'USD':'symbol' }}</p>
+      </div>
+     
+      <div *ngIf="loading">
+        <p>Loading...</p>
+      </div>
+    
+      <div *ngIf="!costDetails && !loading">
+        <p>No data to display.</p>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>

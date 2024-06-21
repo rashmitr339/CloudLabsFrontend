@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="user-info">
+      <img src="../../assets/user2.png" alt="User Icon" class="user-icon" (click)="home()">
+      <h6 class="username">{{ username }}</h6>
+    </div>
+    <h4 style="margin-bottom: 10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:whitesmoke;">Menu</h4>
+    <ul>
+        <li><a routerLink="/adminlab"><i class="bi bi-info-circle" style="color: white; margin-right: 5px;"></i>Info</a></li>
+        <li><a routerLink="/adminevent"><i class="bi bi-calendar" style="color: white; margin-right: 5px;"></i>Events</a></li>
+        <li><a routerLink="/admincost"><i class="bi bi-currency-dollar" style="color: white; margin-right: 5px;"></i>Cost Management</a></li>
+        <li><a routerLink="/admindashboard"><i class="bi bi-speedometer2" style="color: white; margin-right: 5px;"></i>Dashboard</a></li>
+        <li><a routerLink="/viewusers"><i class="bi bi-people" style="color: white; margin-right: 5px;"></i>View Users</a></li>
+      </ul>
+  </div>
+  
+  <div class="content" style="margin-left: 250px;">
+    <h1>User Management</h1>
+    <div class="btnnn-container">
+      <button class="btnnn" (click)="Logout()">Logout</button>
+    </div>
+    <p class="first">"The User Management involves maintaining user profiles, which may include personal information, and preferences. allows the setup of a central user administration. This means you can define and manage users and user groups across software and devices."</p>
+   
+    <h3>User Details</h3>
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td><button (click)="deleteUser(user.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="user-info">
+      <img src="../../assets/user2.png" alt="User Icon" class="user-icon">
+      <h6 class="username">{{ username }}</h6>
+    </div>
+    <h4 style="margin-bottom: 10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:whitesmoke;">Menu</h4>
+    <ul>
+      <li><a routerLink="/userlab"><i class="bi bi-info-circle" style="color: white; margin-right: 5px;"></i>Info</a></li>
+      <li><a routerLink="/deploycft"><i class="bi bi-box-arrow-in-right" style="color: white; margin-right: 5px;"></i>Deploy CFT</a></li>
+      <li><a [routerLink]="stackDeployed ? '/event' : null" [class.disabled]="!stackDeployed"><i class="bi bi-calendar-event" style="color: white; margin-right: 5px;"></i>Events</a></li>
+      <li><a [routerLink]="stackDeployed ? '/result' : null" [class.disabled]="!stackDeployed"><i class="bi bi-graph-up" style="color: white; margin-right: 5px;"></i>Results</a></li>
+  </ul>
+  </div>
+  
+  <div class="content" style="margin-left: 250px;">
+    <h1>Create your First Amazon EC2 Instance</h1>
+    <p>"Amazon Elastic Compute Cloud (EC2) is a web service provided by Amazon Web Services (AWS) that offers resizable compute capacity in the cloud. EC2 allows you to increase or decrease capacity within minutes, providing flexibility to handle changes in requirements or spikes in traffic. It is designed to make web-scale cloud computing easier for developers by providing secure, resizable compute capacity in the cloud."</p>
+    <h3>Steps:</h3>
+    <div class="steps" >
+    <ul>
+        <li>Now you are in the deployment page, Click on the text input field where it says "Enter CFT URL" & "Enter Stack Name".</li>
+        <li>Type in the desired Stack Name for your CloudFormation stack.</li>
+        <li>Paste the CFT URL into the input field.</li>
+        <li>Once both the Stack Name and CFT URL are entered, Click the "Launch" button.</li>
+        <li>Patiently wait for the status updates to monitor the progress of your EC2 instance deployment.</li>
+    </ul>
+   </div>
+      <!-- <div class="deploy">
+        <input type="text" placeholder="Enter CFT URL">
+        <button >Launch</button>
+      </div> -->
+
+      <div class="deploy">
+        <div>
+          <input type="text" [(ngModel)]="stackName" placeholder="Enter Stack Name">
+        </div>
+        <div>
+          <input type="text" [(ngModel)]="cftUrl" placeholder="Enter CFT URL">
+        </div>
+        <button (click)="deployCft()">Launch</button>
+        <!-- <p>{{ response }}</p> -->
+      </div>
+
+     
+  </div>
+</div>
+
+</body>
+</html>
+

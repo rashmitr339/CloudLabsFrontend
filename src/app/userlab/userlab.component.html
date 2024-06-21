@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="user-info">
+      <img src="../../assets/user2.png" alt="User Icon" class="user-icon">
+      <h6 class="username">{{ username }}</h6>
+    </div>
+    <h4 style="margin-bottom: 10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:whitesmoke">Menu</h4>
+    <ul>
+      <li><a routerLink="/userlab"><i class="bi bi-info-circle" style="color: white; margin-right: 5px;"></i>Info</a></li>
+      <li><a routerLink="/deploycft"><i class="bi bi-box-arrow-in-right" style="color: white; margin-right: 5px;"></i>Deploy CFT</a></li>
+      <li><a routerLink="/event" [class.disabled]="!cftDeployed"><i class="bi bi-calendar-event" style="color: white; margin-right: 5px;"></i>Events</a></li>
+      <li><a routerLink="/result" [class.disabled]="!cftDeployed"><i class="bi bi-graph-up" style="color: white; margin-right: 5px;"></i>Results</a></li>
+  </ul>
+  </div>
+  
+  <div class="content" style="margin-left: 250px;">
+    <h1>Welcome to Cloud Lab</h1>
+    <p class="first">"Welcome to Cloud Lab, your gateway to mastering cloud computing and managing cloud resources efficiently! Whether you're a beginner just starting out or an experienced professional looking to enhance your skills, Cloud Lab provides a robust, interactive environment to explore the vast possibilities of cloud technologies."</p>
+
+    <h2>CloudLabs Services</h2>
+    <p>CloudLabs is designed for organizations and educational institutes of all sizes to offer an impactful learning experience with zero to minimal management overhead.</p>
+     <div class="flex">
+      <div class="card" style="width: 18rem;">
+        <img src="../../assets/keyboard.png" class="card-img-top" alt="..." style="height: 50px; width:50px; margin-left:30px;">
+        <div class="card-body">
+          <h6>HOL Platform</h6>
+          <p class="card-text">Build, deliver and consume custom technology labs.</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="../../assets/demo.png" class="card-img-top" alt="..." style="height: 50px; width:50px; margin-left:30px;">
+        <div class="card-body">
+          <h6>Demos</h6>
+          <p class="card-text">Showcase your tech product with impactful scenarios.</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="../../assets/me.png" class="card-img-top" alt="..." style="height: 50px; width:50px; margin-left:30px;">
+        <div class="card-body">
+          <h6>Modernize Education</h6>
+          <p class="card-text">Designed for universities to modernize lab infrastructure </p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="../../assets/event2.png" class="card-img-top" alt="..." style="height: 50px; width:50px; margin-left:30px;">
+        <div class="card-body">
+          <h6>Event & Hackathons</h6>
+          <p class="card-text">Conduct impactful technology events and hackathon.</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="../../assets/skill.png" class="card-img-top" alt="..." style="height: 50px; width:50px; margin-left:30px;">
+        <div class="card-body">
+          <h6>Skill Validation</h6>
+          <p class="card-text">Validate Skills with CloudLabs Practice tests and evaluation.</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="../../assets/content2.jpg" class="card-img-top" alt="..." style="height: 50px; width:50px; margin-left:30px;">
+        <div class="card-body">
+          <h6>Content Development</h6>
+          <p class="card-text">Developing simple yet powerful technology enablement content.</p>
+        </div>
+      </div>
+     </div>
+
+        <h2>Key Features</h2>
+        <section>
+        <h3>1. Interactive Shell Environment</h3>
+        <p>Cloud Lab offers a fully functional Linux shell directly in your browser. This environment comes pre-configured with a suite of essential tools, including:</p>
+        <ul class="list" style="margin-left:60px">
+            <li>Google Cloud SDK (gcloud): Manage your Google Cloud resources seamlessly.</li>
+            <li>Kubernetes CLI (kubectl): Orchestrate your containerized applications with ease.</li>
+            <li>Git: Version control your code and collaborate with others.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>2. Integrated Development Environment</h3>
+        <p>Enhance your productivity with the built-in code editor. Edit scripts, write code, and manage configuration files directly within the Cloud Lab interface. The editor supports syntax highlighting and other features to make coding more efficient.</p>
+    </section>
+    <section>
+        <h3>3. Persistent Storage</h3>
+        <p>Your Cloud Lab session includes 5 GB of persistent disk storage, ensuring that your files and projects are saved across sessions. You can store scripts, configuration files, and other resources in your home directory, making it easy to pick up right where you left off.</p>
+    </section>
+    <h2 class="tec">CloudLab Technology</h2>
+    <div class="footer">
+      <p>The CloudLab clusters have almost 1,000 machines distributed across three sites around the United States: Utah, Wisconsin, and South Carolina. In addition, it provides access to a number of federated facilities around and outside of the US. CloudLab is interconnected with nationwide and international infrastructure from Internet2, so it is possible to extend private, software-defined networks right to every server.</p>
+    </div>
+    <div class="footer">
+      <p>CloudLab provides researchers with control and visibility all the way down to the bare metal. Provisioning an entire cloud inside of CloudLab takes only minutes. Most CloudLab resources provide hard isolation from other users, so it can support hundreds of simultaneous "slices", with each getting an artifact-free environment suitable for scientific experimentation with new cloud architectures. Run standard cloud software stacks such as OpenStack, Hadoop, and Kubernetes. Or, build your own from the ground up. The bare metal's the limit!</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="user-info">
+      <img src="../../assets/user2.png" alt="User Icon" class="user-icon">
+      <h6 class="username">{{ username }}</h6>
+    </div>
+    <h4 style="margin-bottom: 10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:whitesmoke;">Menu</h4>
+    <ul>
+      <li><a routerLink="/userlab" [class.disabled]="!cftDeployed"><i class="bi bi-info-circle" style="color: white; margin-right: 5px;"></i>Info</a></li>
+      <li><a routerLink="/deploycft" [class.disabled]="!cftDeployed"><i class="bi bi-box-arrow-in-right" style="color: white; margin-right: 5px;"></i>Deploy CFT</a></li>
+      <li><a routerLink="/event" [class.disabled]="!cftDeployed"><i class="bi bi-calendar-event" style="color: white; margin-right: 5px;"></i>Events</a></li>
+      <li><a routerLink="/result"><i class="bi bi-graph-up" style="color: white; margin-right: 5px;"></i>Results</a></li>
+  </ul>
+  </div>
+  
+  <div class="content" style="margin-left: 250px;">
+    <h1>Result</h1>
+    <div class="btnnn-container">
+      <button class="btnnn" (click)="Logout()">Logout</button>
+    </div>
+    <p>"Welcome to your test results page! Here you can review your performance and see how you did on the assessment."</p>
+
+    <div class="score-container">
+      <h3 class="res">Your Total Score: {{FinalMarks}} / {{ActualMarks}}</h3>
+
+      <div *ngIf="resultStatus">
+        <h2 class="status" [ngClass]="{'fail': FinalMarks < 30, 'average': FinalMarks >= 30 && FinalMarks < 70}">{{ resultStatus }}</h2>
+        <h2 class="thank">Thank you for participating in our Assessment!! You can now logout</h2>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+
+

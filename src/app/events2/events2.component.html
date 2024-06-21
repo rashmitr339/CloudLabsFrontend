@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="user-info">
+      <img src="../../assets/user2.png" alt="User Icon" class="user-icon">
+      <h6 class="username">{{ username }}</h6>
+    </div>
+    <h4 style="margin-bottom: 10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: whitesmoke;">Menu</h4>
+    <ul>
+      <li><a routerLink="/userlab" [class.disabled]="!cftDeployed"><i class="bi bi-info-circle" style="color: white; margin-right: 5px;"></i>Info</a></li>
+      <li><a routerLink="/deploycft" [class.disabled]="!cftDeployed"><i class="bi bi-box-arrow-in-right" style="color: white; margin-right: 5px;"></i>Deploy CFT</a></li>
+      <li><a routerLink="/eventpage2"><i class="bi bi-calendar-event" style="color: white; margin-right: 5px;"></i>Events</a></li>
+      <li><a routerLink="/result" [class.disabled]="!cftDeployed"><i class="bi bi-graph-up" style="color: white; margin-right: 5px;"></i>Results</a></li>
+  </ul>
+  </div>
+  
+  <div class="content" style="margin-left: 250px;">
+   <h1>Event Assessment</h1>
+    <!-- <p>"Welcome to our Event Assessment program! This process is designed to meticulously evaluate every aspect of our upcoming event to ensure a seamless and successful experience for all attendees. This includes testing logistics, technology, program flow, and participant engagement strategies."</p> --> 
+    <div class="question">
+      <div *ngFor="let q of Data; let i = index" class="quest">
+        <div>
+          <h3 name="question">{{ q.question }}
+            <strong style="margin-right: 5px;"></strong> [{{ q.marks }}M]
+          </h3>
+        </div>
+        <div class="option">
+          <input type="radio" name="option{{i}}" [value]="q.option1" (change)="selectAnswer(i, q.option1)"> {{ q.option1 }}<br>
+          <input type="radio" name="option{{i}}" [value]="q.option2" (change)="selectAnswer(i, q.option2)"> {{ q.option2 }}<br>
+          <input type="radio" name="option{{i}}" [value]="q.option3" (change)="selectAnswer(i, q.option3)"> {{ q.option3 }}<br>
+          <input type="radio" name="option{{i}}" [value]="q.option4" (change)="selectAnswer(i, q.option4)"> {{ q.option4 }}<br>
+        </div>
+        
+      </div>
+    </div>
+    <div class="button-container">
+      <button type="button" (click)="nav()" style="margin-right: 810px;">Previous</button>
+      <button type="button" (click)="validateAndProceed()">Submit</button>
+    </div>
+    <div class="pagination">
+      <a routerLink="/event">1</a>
+      <a routerLink="/eventpage2" class="active">2</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

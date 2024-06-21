@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="user-info">
+      <img src="../../assets/user2.png" alt="User Icon" class="user-icon" (click)="home()">
+      <h6 class="username">{{ username }}</h6>
+    </div>
+    <h4 style="margin-bottom: 10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:whitesmoke;">Menu</h4>
+    <ul>
+      <li><a routerLink="/adminlab"><i class="bi bi-info-circle" style="color: white; margin-right: 5px;"></i>Info</a></li>
+      <li><a routerLink="/adminevent"><i class="bi bi-calendar" style="color: white; margin-right: 5px;"></i>Events</a></li>
+      <li><a routerLink="/admincost"><i class="bi bi-currency-dollar" style="color: white; margin-right: 5px;"></i>Cost Management</a></li>
+      <li><a routerLink="/admindashboard"><i class="bi bi-speedometer2" style="color: white; margin-right: 5px;"></i>Dashboard</a></li>
+      <li><a routerLink="/viewusers"><i class="bi bi-people" style="color: white; margin-right: 5px;"></i>View Users</a></li>
+    </ul>
+  </div>
+  
+  <div class="content" style="margin-left: 250px;">
+    <h1>Event Assessment</h1>
+    <div class="btnnn-container">
+      <!-- <button class="btnnn" (click)="toggleValidation()">Toggle Validation</button> -->
+        <button class="btnnn" (click)="add()">Add</button>
+    </div>
+    <p>"Welcome to our Event Assessment program! This process is designed to meticulously evaluate every aspect of our upcoming event to ensure a seamless and successful experience for all attendees. This includes testing logistics, technology, program flow, and participant engagement strategies."</p>
+    <div class="question">
+      <div *ngFor="let q of Data; let i = index" class="quest">
+        <img src="../../assets/wrg.png" class="del" style="width: 20px; height:20px;" (click)="delete(q.id)">
+        <div>
+          <h3 name="question">{{ q.question }}
+            <strong style="margin-right: 5px;"></strong> [{{ q.marks }}M]
+          </h3>
+        </div>
+        <div class="option">
+          <input type="radio" name="option{{i}}" [value]="q.option1" > {{ q.option1 }}<br>
+          <input type="radio" name="option{{i}}" [value]="q.option2" > {{ q.option2 }}<br>
+          <input type="radio" name="option{{i}}" [value]="q.option3" > {{ q.option3 }}<br>
+          <input type="radio" name="option{{i}}" [value]="q.option4" > {{ q.option4 }}<br>
+          <div class="btnn-container">
+            <button class="btnn" (click)="edit(q.id)">Edit</button>
+        </div>
+        </div>
+        
+       
+      </div>
+    </div>
+    <div class="button-container">
+      <button type="button" (click)="nextevent()">Next</button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

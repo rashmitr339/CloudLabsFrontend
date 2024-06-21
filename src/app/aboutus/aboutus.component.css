@@ -1,0 +1,103 @@
+.hero {
+    background-image: url('../../assets/lab.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333; /* Dark color for text to contrast with light background */
+    padding: 20px; /* Add padding to create space around the content */
+  }
+
+  .hero-text {
+    max-width: 600px; /* Adjust width as needed */
+  }
+
+  .hero-text h1 {
+    font-size: 3rem; /* Example: Adjust the font size */
+    margin-bottom: 20px; /* Space between heading and paragraph */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem; /* Example: Adjust the font size */
+    line-height: 1.6; /* Example: Adjust line height for readability */
+    margin-bottom: 20px; /* Space between paragraph and button */
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bold;
+  }
+
+  .hero-text button {
+    background-color:  #495057 ; /* Example: Adjust button background color */
+    color: #fff; /* Match button text color with background color */
+    padding: 10px 20px; /* Padding around button text */
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem; /* Example: Adjust button font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition color change */
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .hero-text button:hover {
+    background-color: #6c757d; /* Darker color on hover */
+    color: #fff; /* Change text color on hover */
+  }
+
+  .about-section {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+  }
+  
+  /* .about-content {
+    background: rgba(255, 255, 255, 0.7); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .about-content h2 {
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .about-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+
+  } */
+
+  
+  .about-content {
+    background-color: rgba(248, 249, 250, 0.6); /* Light gray background with 60% opacity */
+    padding: 15px 25px; /* Reduced top and bottom padding */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 900px; /* Increased width for better readability */
+    margin: 0 auto; /* Center align horizontally */
+  }
+
+  .about-content h2 {
+    margin-bottom: 10px; /* Reduced margin bottom for heading */
+    font-family: 'Roboto', sans-serif;
+    color: #343a40; /* Dark gray text color */
+    font-size: 2.0rem; /* Slightly smaller font size for heading */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .about-content p {
+    margin-bottom: 10px; /* Reduced margin bottom for paragraphs */
+    line-height: 1.6; /* Reduced line height for paragraphs */
+    font-family:'Times New Roman', Times, serif;
+    color: black; /* Medium gray text color */
+    font-size: 1.2rem; /* Slightly smaller font size for paragraphs */
+
+
+  }
